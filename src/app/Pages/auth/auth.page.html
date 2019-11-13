@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-grid class="ion-margin-top">
+    <ion-row >
+      <ion-col size="6" offset="3" class="center">
+        <img width="50%" src="./assets/logo.png">
+      </ion-col>
+      <ion-col size="12">
+        <ion-text color="primary" class="ion-text-center">
+          <h2 class="ion-no-margin" >Bienvenido a <br> Mind Help</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row >
+      <ion-col size="12" class="ion-margin-top">
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text  [routerLink]="'/reset-password'" color="primary" class="ion-text-end">
+          <p>¿Olvidaste tu contraseña?</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button expand="block" >Iniciar Sesión</ion-button>
+      </ion-col>
+      <ion-col size="12" >
+        <ion-text class="ion-text-center">
+          <p>¿Aún no tienes cuenta? <span [routerLink]="'/register'" class="text-primary" > Regístrate </span> </p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

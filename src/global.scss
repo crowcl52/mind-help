@@ -24,3 +24,23 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    --ion-color-primary: #24AB73;
+}
+
+$primary : #24AB73;
+
+.text-primary{
+    color: $primary;
+}
+
+
+.header{
+    background-color: $primary;
+    border-bottom-right-radius: 50%;
+    display: flex;
+    height: 115px;
+    flex-flow: column;
+    justify-content: flex-end;
+}
