@@ -1,0 +1,88 @@
+<ion-header no-border>
+  <div class="header-profile">
+    <ion-avatar class="ion-margin-start">
+      <img class="img-float" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <p class="ion-margin-start white-txt"> Dr. Mike Collier </p>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-label color="primary" slot="end" class="ion-text-end">
+      <ion-icon (click)="presentModal()" color="primary" name="create"></ion-icon>
+      Edit
+    </ion-label>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input disabled value="email@email.com"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Gender</ion-label>
+          <ion-input disabled value="Male"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Specialist</ion-label>
+          <ion-input disabled value="Family, Sports, Estress"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input disabled value="555 555"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Country</ion-label>
+          <ion-input disabled value="Mexico"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Date Birth</ion-label>
+          <ion-input disabled value="12/05/80"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Work Since</ion-label>
+          <ion-input disabled value="2010"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-text>
+            <h3>Description</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit quaerat accusamus, nemo dolorem quos a
+              doloribus, fugit libero consequatur expedita iure numquam cumque! Odio at, officiis similique sunt fuga
+              ea?
+            </p>
+          </ion-text>
+        </ion-item>
+
+      </ion-col>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label> Resume </ion-label>
+        </ion-item>
+        <ion-item lines="none" color="light" >
+          <ion-label>
+            <ion-icon color="primary"  name="time"></ion-icon> <span> Resume Doctor.pdf</span>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

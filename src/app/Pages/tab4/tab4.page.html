@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>tab4</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-onli title="Settings"></app-header-onli>
+
 
 <ion-content>
+
+  <ion-row class="ion-margin-top">
+    <ion-col size="12">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label> Johana Car <br> <span class="text-primary"> Depression </span> </ion-label>
+        <ion-icon [routerLink]="['/app']" color="primary" name="create"></ion-icon>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-item lines="none">
+        <p>
+          I’m expert in psychiatric treatment. <br>
+          <ion-text color="primary">
+            Familia, Deportes, Estrés Crónico
+          </ion-text>
+        </p>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+
+    <ion-item [routerLink]="['/app/tabs/tab4/profile']">
+      <ion-label>Edit Profile</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/app']">
+      <ion-label>Change Password</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/app']">
+      <ion-label>Contact Us</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Notification</ion-label>
+      <ion-toggle color="primary"></ion-toggle>
+    </ion-item>
+
+    <ion-item [routerLink]="['/app/tabs/tab4/faq']">
+      <ion-label>FAQ</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/app']">
+      <ion-label>About Mind Help</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Log Out</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header-notification',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-notification.component.scss'],
 })
 export class HeaderNotificationComponent implements OnInit {
+
+  @Input() title;
 
   constructor() { }
 

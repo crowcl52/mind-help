@@ -40,7 +40,41 @@ $primary : #24AB73;
     background-color: $primary;
     border-bottom-right-radius: 50%;
     display: flex;
-    height: 115px;
+    height: 90px;
     flex-flow: column;
     justify-content: flex-end;
+}
+
+.header-small{
+    height: 60px;
+}
+
+.date-time{
+    border-left: 4px solid $primary;
+    border-radius: 5px;
+}
+
+.icon-big{
+    font-size: 2rem;
+}
+
+.icon-medium{
+    font-size: 1.3rem;
+}
+
+.header-profile{
+    background-color: $primary;
+    border-radius: 7px;
+    margin-top: -5px;
+    display: flex;
+    height: 80px;
+    align-items: flex-end;
+}
+
+.img-float{
+    margin-top:25px;
+}
+
+.white-txt{
+    color: white !important;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header-onli',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-onli.component.scss'],
 })
 export class HeaderOnliComponent implements OnInit {
+
+  @Input() title;
 
   constructor() { }
 

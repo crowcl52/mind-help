@@ -1,9 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-onli title="Booking"></app-header-onli>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-segment class="ion-margin-top" (ionChange)="segmentChanged($event)" [value]="segment">
+    <ion-segment-button class="ion-no-margin" value="upcoming">
+      <ion-label>Upcoming</ion-label>
+    </ion-segment-button>
+    <ion-segment-button class="ion-no-margin" value="past">
+      <ion-label>Past</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-row *ngIf="segment == 'upcoming'" class="ion-margin-top">
+    <ion-col size="12">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label> Johana Car <br> <span class="text-primary"> Depression </span> </ion-label>
+        <ion-chip color="secondary">
+          <ion-label color="primary">Acepted</ion-label>
+        </ion-chip>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-item color="light" class="date-time">
+        <ion-label>
+          <ion-icon color="primary" class="icon-medium" name="calendar"></ion-icon> <span> June 06 </span>
+        </ion-label>
+        <ion-label>
+          <ion-icon color="primary" class="icon-medium" name="time"></ion-icon> <span> 09:00 am </span>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="segment == 'past'" class="ion-margin-top">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-avatar>
+          <ion-label> Johana Car <br> <span class="text-primary"> Depression </span> </ion-label>
+          <ion-chip color="secondary">
+            <ion-label color="primary">Completed</ion-label>
+          </ion-chip>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item color="light" class="date-time">
+          <ion-label>
+            <ion-icon color="primary" class="icon-medium" name="calendar"></ion-icon> <span> June 06 </span>
+          </ion-label>
+          <ion-label>
+            <ion-icon color="primary" class="icon-medium" name="time"></ion-icon> <span> 09:00 am </span>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+</ion-content>

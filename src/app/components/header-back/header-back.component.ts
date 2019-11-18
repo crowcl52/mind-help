@@ -9,6 +9,8 @@ export class HeaderBackComponent implements OnInit {
 
   @Input() title: string;
 
+  @Input() url = "/";
+
   constructor() { }
 
   ngOnInit() {}

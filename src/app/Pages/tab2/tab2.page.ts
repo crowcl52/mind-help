@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  segment = 'upcoming';
+
   constructor() {}
+
+  segmentChanged(e){
+    this.segment = e.detail.value;
+  }
 
 }

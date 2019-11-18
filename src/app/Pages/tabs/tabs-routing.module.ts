@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { ProfilePageModule } from '../profile/profile.module';
 
 const routes: Routes = [
   {
@@ -44,6 +45,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab4/tab4.module').then(m => m.Tab4PageModule)
+          },
+          {
+            path: 'profile',
+            loadChildren: () =>
+              import('../profile/profile.module').then(m => m.ProfilePageModule)
+          },
+          {
+            path: 'faq',
+            loadChildren: () =>
+              import('../faq/faq.module').then(m => m.FaqPageModule)
           }
         ]
       },

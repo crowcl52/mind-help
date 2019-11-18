@@ -1,11 +1,11 @@
 <ion-header no-border>
     <div class="header">
       <ion-buttons slot="start" class="ion-padding-start">
-        <ion-back-button color="light" text="" defaultHref="/"></ion-back-button>
+        <ion-back-button color="light" text="" [defaultHref]="url"></ion-back-button>
       </ion-buttons>
   
       <ion-text text-capitalize color="light" slot="end">
-          <h2 class="ion-text-center" >{{title}}</h2>
+          <h2 class="ion-text-center ion-no-margin ion-margin-bottom" >{{title}}</h2>
         </ion-text>
     </div>
   </ion-header>
