@@ -26,10 +26,10 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 :root {
-    --ion-color-primary: #24AB73;
+    --ion-color-primary: #29B6F6;
 }
 
-$primary : #24AB73;
+$primary : #29B6F6;
 
 .text-primary{
     color: $primary;
@@ -43,6 +43,15 @@ $primary : #24AB73;
     height: 90px;
     flex-flow: column;
     justify-content: flex-end;
+}
+
+.header-back{
+    background-color: $primary;
+    border-bottom-right-radius: 50%;
+    display: flex;
+    height: 70px;
+    flex-flow: row;
+    align-items: center;
 }
 
 .header-small{
@@ -77,4 +86,13 @@ $primary : #24AB73;
 
 .white-txt{
     color: white !important;
+}
+
+.hour-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #E9F5F0 ;
+    height: 50px;
+    border-radius: 7px;
 }

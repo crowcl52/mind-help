@@ -15,6 +15,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+          },
+          {
+            path: 'disponibilidad',
+            loadChildren: () =>
+              import('../availability/availability.module').then(m => m.AvailabilityPageModule)
+          },
+          {
+            path: 'notificaciones',
+            loadChildren: () =>
+              import('../notification/notification.module').then(m => m.NotificationPageModule)
           }
         ]
       },
@@ -35,6 +45,11 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+          },
+          {
+            path: 'chat',
+            loadChildren: () =>
+              import('../chat/chat.module').then(m => m.ChatPageModule)
           }
         ]
       },
@@ -50,6 +65,11 @@ const routes: Routes = [
             path: 'profile',
             loadChildren: () =>
               import('../profile/profile.module').then(m => m.ProfilePageModule)
+          },
+          {
+            path: 'edit-profile',
+            loadChildren: () =>
+              import('../edit-profile/edit-profile.module').then(m => m.EditProfilePageModule)
           },
           {
             path: 'faq',

@@ -1,0 +1,86 @@
+<app-header-back url="/app/tabs/tab4/profile" title="Edit Profile"></app-header-back>
+
+<ion-content>
+  <!-- Profile Image -->
+  <div class="image-cointainer ion-margin-top">
+    <ion-avatar class="ion-text-center">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <p (click)="openFile()" class="ion-no-margin edit-button">
+      <ion-icon color="primary" name="create"></ion-icon>
+    </p>
+  </div>
+  <!-- Form Data -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Gender</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <!-- Speciality -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Categoría</ion-label>
+          <ion-select multiple="true" placeholder="Select One">
+            <ion-select-option *ngFor="let i of categorias"  [value]="i.id">{{i.value}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Mobile Number</ion-label>
+          <ion-input type="tel"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Country</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Mexico</ion-select-option>
+            <ion-select-option value="m">USA</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Birthdate</ion-label>
+          <ion-datetime displayFormat="DD MM YYYY" value="1990-01-01T13:47:20.789"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Trabajando desde</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">2018</ion-select-option>
+            <ion-select-option value="m">2017</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

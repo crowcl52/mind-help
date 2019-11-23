@@ -2,14 +2,14 @@
   <div class="header">
 
     <div class="notifications">
-      <ion-button fill='clear'>
+      <ion-button [routerLink]="['/app/tabs/tab1/notificaciones']" fill='clear'>
         <ion-icon class="icon-big" color="light" name="notifications-outline"></ion-icon>
         <ion-badge color="danger">11</ion-badge>
       </ion-button>
     </div>
 
     <ion-text text-capitalize color="light" slot="end">
-      <h2 class="ion-no-margin ion-margin-bottom ion-margin-start">
+      <h2 [routerLink]="['/app/tabs/tab1/disponibilidad']" class="ion-no-margin ion-margin-bottom ion-margin-start">
         <ion-icon class="ion-margin-end" name="calendar"></ion-icon> {{title}}
       </h2>
     </ion-text>

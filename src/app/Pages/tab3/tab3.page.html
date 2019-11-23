@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-onli title="Chat"></app-header-onli>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-item></ion-item>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item [routerLink]="['/app/tabs/tab3/chat']" lines="none">
+        <ion-avatar slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label color="medium"> Johana Car <br>
+          <span>
+            El ultimo mensaje del chat
+          </span>
+        </ion-label>
+        <ion-chip color="light">
+          <ion-label color="medium">9:50AM</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options (click)="presentActionSheet()" side="end">
+        <ion-item-option color="medium">
+          <ion-icon slot="top" name="more"></ion-icon>
+          More
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,17 @@
+.image-cointainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-button{
+    width: 30px;
+    height: 30px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: -10px;
+    border-radius: 50%;
+}
