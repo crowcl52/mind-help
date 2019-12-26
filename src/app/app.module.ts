@@ -14,11 +14,20 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { AES256 } from '@ionic-native/aes-256/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserAnimationsModule, StoreModule.forRoot(reducers, {
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    HttpClientModule, 
+    BrowserAnimationsModule, 
+    StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
@@ -26,6 +35,7 @@ import { environment } from '../environments/environment';
       }
     }), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })],
   providers: [
+    AES256,
     StatusBar,
     SplashScreen,
     ScreenOrientation,

@@ -19,13 +19,13 @@
       <ion-col size="12" class="ion-margin-top">
         <ion-item>
           <ion-label position="floating">Correo Electrónico</ion-label>
-          <ion-input></ion-input>
+          <ion-input type="email" [(ngModel)]="email" ></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" ></ion-input>
+          <ion-input [(ngModel)]="password" type="password" ></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="12">
@@ -41,7 +41,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" >
-        <ion-button expand="block" [routerLink]="'/app'" >Iniciar Sesión</ion-button>
+        <ion-button expand="block" (click)="login()" >Iniciar Sesión</ion-button>
       </ion-col>
       <ion-col size="12" >
         <ion-text class="ion-text-center">
