@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AlertController } from '@ionic/angular';
-import { AES256 } from '@ionic-native/aes-256/ngx';
+import { AlertController, Platform } from '@ionic/angular';
+import * as CryptoJS from 'crypto-js';
+
+
 
 
 @Injectable({
@@ -14,10 +16,20 @@ export class AuthService {
 
   private url = "https://test.mindhelp.mx/api/v1/";
 
-  constructor(private http: HttpClient, public alertController: AlertController, private aes256: AES256) {}
+  constructor(private http: HttpClient, public alertController: AlertController, private platform: Platform) { }
 
   login(user) {
     let url = `${this.url}app_login`;
+    this.http.post(url, user).subscribe(data => {
+      console.log(data)
+    }, err => {
+      console.log(err.error.msg);
+      this.presentAlert(err.error.msg);
+    })
+  }
+
+  register(user){
+    let url = `${this.url}register`;
     this.http.post(url, user).subscribe(data => {
       console.log(data)
     }, err => {
@@ -38,16 +50,17 @@ export class AuthService {
   }
 
   encrypt(data) {
-    this.aes256.encrypt(this.publicKey, this.secureIV, 'testdata')
-      .then(res => console.log('Encrypted Data: ', res))
-      .catch((error: any) => console.error(error));
+    let _key = CryptoJS.enc.Utf8.parse(this.publicKey);
+    let _iv = CryptoJS.enc.Utf8.parse(this.secureIV);
+    let encrypted = CryptoJS.AES.encrypt(
+      JSON.stringify(data), _key, {
+        keySize: 16,
+        iv: _iv,
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+      });
+    return encrypted.toString();
   }
 
-  desencrypt() {
-
-    this.aes256.decrypt(this.publicKey, this.secureIV, 'encryptedData')
-      .then(res => console.log('Decrypted Data : ', res))
-      .catch((error: any) => console.error(error));
-  }
 
 }

@@ -16,13 +16,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AES256 } from '@ionic-native/aes-256/ngx';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule, 

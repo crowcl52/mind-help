@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
-
+import { Platform } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 
 
@@ -27,7 +27,8 @@ export class EditProfilePage implements OnInit {
   constructor(
     private fileOpener: FileOpener,
     private filePicker: IOSFilePicker,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private platform: Platform
   ) { }
 
   ngOnInit() {
