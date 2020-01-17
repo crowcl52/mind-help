@@ -14,8 +14,8 @@ import * as CryptoJS from 'crypto-js';
 })
 export class AuthPage implements OnInit {
 
-  email = "";
-  password = "";
+  email = "aperezsandid@gmail.com";
+  password = "12345678";
 
   publicKey = "wd2yTcKPlW9qcXWiv8MhQ8rOGHjcrJuC";
   secureIV = "sfsdfsdfsdf12345";
@@ -32,31 +32,16 @@ export class AuthPage implements OnInit {
     // [routerLink]="'/app'"
 
     let user = {
-      email: this.encrypt(this.email),
-      password: this.encrypt(this.password),
-      time_zone: "mexico/monterrey",
+      email: (this.email),
+      password: (this.password),
+      time_zone: "Asia/Kolkata",
       role_id: "2"
     }
 
-    this.encrypt(user.email);
     console.log(user);
 
-    this.service.login(user);
+    this.service.login(this.service.encrypt(user));
 
-  }
-
-
-  encrypt(data) {
-    let _key = CryptoJS.enc.Utf8.parse(this.publicKey);
-    let _iv = CryptoJS.enc.Utf8.parse(this.secureIV);
-    let encrypted = CryptoJS.AES.encrypt(
-      JSON.stringify(data), _key, {
-        keySize: 16,
-        iv: _iv,
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-      });
-    return encrypted.toString();
   }
 
 }

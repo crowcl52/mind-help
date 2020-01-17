@@ -27,27 +27,35 @@ export class RegisterPage implements OnInit {
       country: ['MX', Validators.required],
       date_of_birth: ['', Validators.required],
       gender: ['', Validators.required],
-      time_zone : ['Mexico/Monterrey', Validators.required],
+      time_zone : ['Asia/Kolkata', Validators.required],
     });
+
+    console.log(this.authService.decrypt("5GBaUDB0aFa1OFzM92shJfRT8J7ejf4KzP2tAfyJvbbMT+iIdRLMgV9w4xtRBYAhRADIiTlt9jJ8IJvymp9G52SMdDpH2r1Vt98NHz0VaBHzPQziCKy98+J2D4zEFknts1wuZlBQnmm3yumjMqRpvfs4ZND74KCPWIEg309oF86d3ViNif8DPM6RA1sYlFSfdHoHXxjx96uXmcxeTyIvVQmcYUBSYYieqz9z7QfCRmPFynwtvXMF9FUpNCxSu5rN"))
+    console.log(this.authService.encrypt("5GBaUDB0aFa1OFzM92shJfRT8J7ejf4KzP2tAfyJvbbMT+iIdRLMgV9w4xtRBYAhRADIiTlt9jJ8IJvymp9G52SMdDpH2r1Vt98NHz0VaBHzPQziCKy98+J2D4zEFknts1wuZlBQnmm3yumjMqRpvfs4ZND74KCPWIEg309oF86d3ViNif8DPM6RA1sYlFSfdHoHXxjx96uXmcxeTyIvVQmcYUBSYYieqz9z7QfCRmPFynwtvXMF9FUpNCxSu5rN"))
 
   }
 
   register(){
-    let user = {
-      role_id : this.authService.encrypt(this.registerFG.value.role_id),
-      first_name : this.authService.encrypt(this.registerFG.value.first_name),
-      last_name : this.authService.encrypt(this.registerFG.value.last_name),
-      email: this.authService.encrypt(this.registerFG.value.email),
-      password: this.authService.encrypt(this.registerFG.value.password),
-      country_code: this.authService.encrypt(this.registerFG.value.country_code),
-      phone_number: this.authService.encrypt(this.registerFG.value.phone_number),
-      country: this.authService.encrypt(this.registerFG.value.phone_number),
-      date_of_birth: this.authService.encrypt(this.registerFG.value.country),
-      gender: this.authService.encrypt(this.registerFG.value.gender),
-      time_zone : this.authService.encrypt(this.registerFG.value.time_zone),
-    }
 
-    this.authService.register(user)
+    // let userData = new FormData();
+    let user = {
+      role_id :(this.registerFG.value.role_id),
+      first_name :(this.registerFG.value.first_name),
+      last_name :(this.registerFG.value.last_name),
+      email:(this.registerFG.value.email),
+      password:(this.registerFG.value.password),
+      country_code:(this.registerFG.value.country_code),
+      phone_number:(this.registerFG.value.phone_number),
+      country:(this.registerFG.value.phone_number),
+      date_of_birth:(this.registerFG.value.country),
+      gender:(this.registerFG.value.gender),
+      time_zone :(this.registerFG.value.time_zone),
+    }
+  
+    let encryptUSer = this.authService.encrypt(user)
+
+    console.log(encryptUSer)
+    this.authService.register(encryptUSer);
 
   }
 

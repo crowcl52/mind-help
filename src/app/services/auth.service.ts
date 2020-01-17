@@ -52,14 +52,29 @@ export class AuthService {
   encrypt(data) {
     let _key = CryptoJS.enc.Utf8.parse(this.publicKey);
     let _iv = CryptoJS.enc.Utf8.parse(this.secureIV);
+
     let encrypted = CryptoJS.AES.encrypt(
       JSON.stringify(data), _key, {
-        keySize: 16,
+        keySize: 128,
         iv: _iv,
-        mode: CryptoJS.mode.ECB,
+        mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
       });
     return encrypted.toString();
+  }
+
+  decrypt(data) {
+    let _key = CryptoJS.enc.Utf8.parse(this.publicKey);
+    let _iv = CryptoJS.enc.Utf8.parse(this.secureIV);
+
+    let decrypted = CryptoJS.AES.decrypt(
+     data, _key, {
+        keySize: 128,
+        iv: _iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+      }).toString(CryptoJS.enc.Utf8)
+    return decrypted;
   }
 
 
